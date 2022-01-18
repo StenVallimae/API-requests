@@ -2,6 +2,13 @@ const form = document.querySelector("#searchForm");
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
+
+  //kustutab eelmsied pildid
+  const image = document.querySelector("img");
+  if (image) {
+    image.remove();
+  }
+
   const searchTerm = form.elements.query.value;
   //query string object
   const config = { params: { q: searchTerm } };
